@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shabbir Badri — The Human Kaleidoscope | Immersive Experience</title>
+<meta name="description" content="Scientist, Explorer, Builder, Educator, Scout, Innovator — the life portfolio of Shabbir Badri (THK).">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/immersive.css">
+
+<!-- Three.js & GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<noscript><style>.auth-gate, .preloader, #webgl-container { display: none !important; } .fallback-content { display: block !important; } </style></noscript>
+</head>
+<body class="immersive-experience is-locked no-select">
+
+<!-- Authorization Gate -->
+<div class="auth-gate" id="authGate">
+    <div class="auth-box glass-panel">
+        <div class="auth-logo-wrapper">
+            <div class="thk-logo-animated">
+                <span class="l1">T</span>
+                <span class="l2">H</span>
+                <span class="l3">K</span>
+                <div class="logo-ring"></div>
+            </div>
+        </div>
+        <h2 class="auth-title">System Access</h2>
+        <p class="auth-desc">Select your authorization clearance to initiate the experience.</p>
+        
+        <div class="auth-options">
+            <button class="auth-btn guest-btn" data-clearance="guest">
+                <span class="btn-icon">👁️</span>
+                <div class="btn-text">
+                    <strong>Guest Access</strong>
+                    <span>Cinematic & Narrative Focus</span>
+                </div>
+            </button>
+            <button class="auth-btn pro-btn" data-clearance="professional">
+                <span class="btn-icon">💼</span>
+                <div class="btn-text">
+                    <strong>Professional Clearance</strong>
+                    <span>Technical & Architectural Focus</span>
+                </div>
+            </button>
+        </div>
+        
+        <div class="sec-status">
+            <span class="sec-dot"></span> End-to-End Encryption Simulated
+        </div>
+    </div>
+</div>
+
+<!-- WebGL Container -->
+<div id="webgl-container"></div>
+
+<!-- Top Navigation / Status Bar -->
+<header class="sys-topbar glass-panel-dark hidden-until-auth">
+  <div class="sys-brand">
+    <div class="thk-logo-mini">THK</div>
+    <span class="sys-name">SHABBIR BADRI</span>
+  </div>
+  <div class="sys-status">
+    <span id="clearanceLevelDisplay" class="clearance-badge">GUEST</span>
+    <span class="sys-time" id="sysTime">00:00:00</span>
+  </div>
+</header>
+
+<!-- Storytelling Container -->
+<main class="story-wrapper hidden-until-auth">
+    
+    <!-- Hero Section -->
+    <section class="story-step step-hero">
+        <div class="content-block center-block glass-panel">
+            <h1 class="cinematic-title">The Human Kaleidoscope</h1>
+            <p class="cinematic-subtitle">A synthesis of Science, Technology, and Creativity</p>
+            <div class="scroll-indicator">
+                <span>Initiate Journey</span>
+                <div class="mouse-icon"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identity & Foundation -->
+    <section class="story-step step-identity" id="chapter-1">
+        <div class="content-block left-block glass-panel">
+            <div class="chapter-meta">Chapter 01 // Who I Am</div>
+            <h2 class="section-title">Identity & Foundation</h2>
+            <p class="section-text">The academic base, the CGPA and distinctions, and the underlying question that drives every system I build.</p>
+            <div class="professional-data hidden">
+                <h4>Technical Specifications</h4>
+                <ul class="data-list">
+                    <li>Discipline: Biotechnology & Engineering</li>
+                    <li>Core Competency: Systems Architecture</li>
+                </ul>
+            </div>
+            <a href="about.html" class="sys-btn">Explore Sub-System →</a>
+        </div>
+    </section>
+
+    <!-- The Journey -->
+    <section class="story-step step-journey" id="chapter-2">
+        <div class="content-block right-block glass-panel">
+            <div class="chapter-meta">Chapter 02 // The Journey</div>
+            <h2 class="section-title">Four Life Phases</h2>
+            <p class="section-text">Explorer, Builder, Innovator, Architect. A timeline spanning from 2006 into the unwritten future.</p>
+            <div class="professional-data hidden">
+                <h4>Temporal Analytics</h4>
+                <div class="timeline-bar"></div>
+            </div>
+            <a href="journey.html" class="sys-btn">View Timeline →</a>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="story-step step-experience" id="chapter-3">
+        <div class="content-block left-block glass-panel">
+            <div class="chapter-meta">Chapter 03 // Experience</div>
+            <h2 class="section-title">Nine Years. Nine Roles.</h2>
+            <p class="section-text">Editorial, freelance, and full-time execution running in parallel with rigorous scientific inquiry.</p>
+            <a href="experience.html" class="sys-btn">Access Dossier →</a>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="story-step step-projects" id="chapter-4">
+        <div class="content-block center-block glass-panel">
+            <div class="chapter-meta">Chapter 04 // Innovation</div>
+            <h2 class="section-title">Architecting Reality</h2>
+            <p class="section-text">Three flagship protocols: Biotech infrastructure, Food Science advancements, and Documentary Film.</p>
+            <a href="projects.html" class="sys-btn">Inspect Prototypes →</a>
+        </div>
+    </section>
+
+    <!-- Philosophy & Vision -->
+    <section class="story-step step-philosophy" id="chapter-5">
+        <div class="content-block right-block glass-panel">
+            <div class="chapter-meta">Chapter 07 & 08 // Philosophy & Vision</div>
+            <h2 class="section-title">The Long Game</h2>
+            <p class="section-text">Establishing Biotechnology hubs. Ideas on knowledge, leadership, and the necessity of failure.</p>
+            <div class="btn-group">
+                <a href="philosophy.html" class="sys-btn">Read Philosophy</a>
+                <a href="vision.html" class="sys-btn">View Masterplan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect -->
+    <section class="story-step step-connect" id="chapter-9">
+        <div class="content-block center-block glass-panel">
+            <div class="chapter-meta">Chapter 09 // Connect</div>
+            <h2 class="section-title">Establish Link</h2>
+            <p class="section-text">Open channels for collaboration, inquiry, and system integration.</p>
+            <div class="social-grid">
+                <a href="mailto:shabbirbadri515253@gmail.com" class="social-cell">Email Protocol</a>
+                <a href="https://www.linkedin.com/in/ShabbirBadriTHK" target="_blank" class="social-cell">LinkedIn Network</a>
+                <a href="https://github.com/shabbirbadri" target="_blank" class="social-cell">GitHub Repository</a>
+            </div>
+            <a href="connect.html" class="sys-btn" style="margin-top: 2rem;">Full Contact Info →</a>
+        </div>
+    </section>
+
+    <div class="footer-spacer"></div>
+</main>
+
+<!-- Security overlay for protected actions -->
+<div id="secWarningOverlay" class="sec-warning-overlay">
+    <div class="sec-warning-box">
+        <div class="warning-icon">⚠️</div>
+        <h3>Security Protocol Active</h3>
+        <p>Unauthorized action blocked. Element protection is active on this system.</p>
+    </div>
+</div>
+
+<script src="assets/security-features.js"></script>
+<script src="assets/3d-scene.js"></script>
+</body>
+</html>
